@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './App.css'
 import { CORE_CONCEPTS } from './data.js'
 import Header from './components/Header.jsx';
@@ -6,8 +7,21 @@ import TabButton from './components/TabButton.jsx';
 
 
 function App() {
+  console.log('Executing App component');
+
+  // Rules of Hooks:
+  // useState must be called on the top level of the component
+  // only call Hooks on the top level, inside of component functions
+  // useState HOOK, manage component state
+  // it produces an array with 2 elements
+  // const stateArray = useState('Please click a button');
+  // using array destructuring
+  const [ selectedTopic, setSelectedTopic ] = useState('Please click a button');
+
+
   function handleSelect(selectedButton) {
-    console.log('App - handleSelect Triggered', selectedButton);
+    setSelectedTopic(selectedButton);
+    console.log('selectedTopic: ', selectedTopic);
   }
 
   return (
@@ -65,6 +79,7 @@ function App() {
               State
             </TabButton>
           </menu>
+          { selectedTopic }
         </section>
       </main>
     </div>

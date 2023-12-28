@@ -72,24 +72,28 @@ function App() {
           <h2>Examples</h2>
           <menu>
             <TabButton
+              isSelected={ selectedTopic === 'components' ? true : false }
               onSelect={ () => handleSelect('components') }
             >
               Components
             </TabButton>
 
             <TabButton
+              isSelected={ selectedTopic === 'jsx' ? true : false }
               onSelect={ () => handleSelect('jsx') }
             >
               JSX
             </TabButton>
 
             <TabButton
+              isSelected={ selectedTopic === 'props' ? true : false }
               onSelect={ () => handleSelect('props') }
             >
               Props
             </TabButton>
 
             <TabButton
+              isSelected={ selectedTopic === 'state' ? true : false }
               onSelect={ () => handleSelect('state') }
             >
               State

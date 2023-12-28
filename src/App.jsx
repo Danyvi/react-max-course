@@ -16,7 +16,7 @@ function App() {
   // it produces an array with 2 elements
   // const stateArray = useState('Please click a button');
   // using array destructuring
-  const [ selectedTopic, setSelectedTopic ] = useState('components');
+  const [ selectedTopic, setSelectedTopic ] = useState();
 
 
   function handleSelect(selectedButton) {
@@ -80,7 +80,8 @@ function App() {
             </TabButton>
           </menu>
 
-          <div id="tab-content">
+          { !selectedTopic ? <p>Please select a topic.</p> : null }
+          { selectedTopic ? <div id="tab-content">
             <h3>{ EXAMPLES[selectedTopic].title }</h3>
             <p>{ EXAMPLES[selectedTopic].description }</p>
             <pre>
@@ -88,7 +89,8 @@ function App() {
                 { EXAMPLES[selectedTopic].code }
               </code>
             </pre>
-          </div>
+          </div> : null }
+
         </section>
       </main>
     </div>

@@ -6,8 +6,8 @@ import TabButton from './components/TabButton.jsx';
 
 
 function App() {
-  function handleSelect() {
-    console.log('App - handleSelect Triggered');
+  function handleSelect(selectedButton) {
+    console.log('App - handleSelect Triggered', selectedButton);
   }
 
   return (
@@ -42,25 +42,25 @@ function App() {
           <h2>Examples</h2>
           <menu>
             <TabButton
-              onSelect={ handleSelect }
+              onSelect={ () => handleSelect('components') }
             >
               Components
             </TabButton>
 
             <TabButton
-              onSelect={ handleSelect }
+              onSelect={ () => handleSelect('jsx') }
             >
               JSX
             </TabButton>
 
             <TabButton
-              onSelect={ handleSelect }
+              onSelect={ () => handleSelect('props') }
             >
               Props
             </TabButton>
 
             <TabButton
-              onSelect={ handleSelect }
+              onSelect={ () => handleSelect('state') }
             >
               State
             </TabButton>
